@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
         public StudioEventEmitter musicPause;
         public StudioEventEmitter ambiance;
         public StudioEventEmitter snapShotPause;
+        public StudioEventEmitter musicCave;
     }
     public Emitters eventEmitters;
 
@@ -62,6 +63,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private EventReference stingerGameOver;
     [SerializeField] private EventReference stingerKeyPickup;
     [SerializeField] private EventReference stingerWeaponPickup;
+    [SerializeField] private EventReference stingerPuzzleSolved;
         
     [HideInInspector]
     public bool combatState;
@@ -343,7 +345,15 @@ public class AudioManager : MonoBehaviour
         }
         RuntimeManager.PlayOneShot(pressurePad);
     }
-
+    public void PlayPuzzleSolved()
+    {
+        if (stingerPuzzleSolved.IsNull)
+        {
+            Debug.LogWarning("Fmod event not found: stingerPuzzleSolved");
+            return;
+        }
+        RuntimeManager.PlayOneShot(stingerPuzzleSolved);
+    }
     public void PlayMenuGeneric()
     {
         if (menuClick.IsNull)
@@ -451,6 +461,11 @@ public class AudioManager : MonoBehaviour
         if (!eventEmitters.snapShotPause.IsActive)
         {
             eventEmitters.snapShotPause.Play();
+        }
+        
+        if (!eventEmitters.musicCave.IsActive)
+        {
+            eventEmitters.musicCave.Play();
         }
         
     }
