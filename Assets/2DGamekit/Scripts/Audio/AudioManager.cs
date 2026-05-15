@@ -78,6 +78,8 @@ public class AudioManager : MonoBehaviour
     public List<Tuple<StudioEventEmitter, string, float>> savedParameterValues =
         new List<Tuple<StudioEventEmitter, string, float>>();
 
+    private GameObject ellen;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -106,12 +108,25 @@ public class AudioManager : MonoBehaviour
             killedEnemies = 0;
             RuntimeManager.StudioSystem.setParameterByName(killedEnemiesParam, killedEnemies);
         }
-
         Debug.Log(aggroEnemyCount);
+
+        if (ellen != null)
+        {
+            float ellenY = ellen.transform.position.y;
+            eventEmitters.musicCave.SetParameter("ellenY", ellenY);
+        }
         
+
         //RuntimeManager.StudioSystem.setParameterByName(aggroEnemyParamName, aggroEnemyCount);
     }
 
+    public void FindEllen()
+    {
+        ellen = GameObject.Find("Ellen");
+    }
+    
+    
+    
     public void CombatState(bool combatS)
     {
         combatState = combatS;
