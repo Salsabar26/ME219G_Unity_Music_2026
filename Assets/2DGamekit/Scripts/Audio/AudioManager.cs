@@ -124,8 +124,11 @@ public class AudioManager : MonoBehaviour
     {
         ellen = GameObject.Find("Ellen");
     }
-    
-    
+
+    public void ForgetEllen()
+    {
+        ellen = null;
+    }
     
     public void CombatState(bool combatS)
     {

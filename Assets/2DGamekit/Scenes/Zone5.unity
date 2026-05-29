@@ -514,6 +514,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &38928873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
+    type: 3}
+  m_PrefabInstance: {fileID: 4256432019810382529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b023496471c2240b53ba8f3361a010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &66930427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2002,9 +2014,9 @@ MonoBehaviour:
   audioSettings:
   - emitter: {fileID: 0}
     tag: MusicBoss
-    action: 3
+    action: 1
     parameter: BossStage
-    targetValue: 0
+    targetValue: 1
 --- !u!1 &211741460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,6 +4613,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 38928873}
+        m_TargetAssemblyTypeName: AudioBossManager, Assembly-CSharp
+        m_MethodName: BossDie
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 896539101}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -53361,7 +53385,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03daa8c22bdddef4193840a795b881f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSettings: []
+  audioSettings:
+  - emitter: {fileID: 0}
+    tag: MusicBoss
+    action: 0
+    parameter: 
+    targetValue: 0
 --- !u!114 &975682040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69538,12 +69567,12 @@ PrefabInstance:
     - target: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
       propertyPath: stage1Value
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
       propertyPath: stage2Value
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
@@ -69553,12 +69582,12 @@ PrefabInstance:
     - target: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
       propertyPath: bossDeathValue
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256432018734796894, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
       propertyPath: stageParameter
-      value: 
+      value: BossStage
       objectReference: {fileID: 0}
     - target: {fileID: 4256432018734796895, guid: 056286e10563bf64cae51e44c59f8d93,
         type: 3}
